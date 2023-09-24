@@ -90,7 +90,7 @@ public class EditarDatos extends javax.swing.JFrame {
         bntLimpiar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bntLimpiar.setForeground(new java.awt.Color(51, 255, 102));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/rasta/NetBeansProjects/PeluqueriaCanina/src/main/resources/META-INF/veterinary.gif")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/veterinary.gif"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         btnLimpiar.setBackground(new java.awt.Color(0, 153, 51));
@@ -319,12 +319,12 @@ public class EditarDatos extends javax.swing.JFrame {
         if (nombreMaco.isEmpty() || raza.isEmpty() || color.isEmpty() || nombredunio.isEmpty() || telefono.isEmpty()
                 || alergico.equals("--")) {
 
-            mostrarMensaje("Los datos obligatorios (*) no estan rellenos", "Error", "Registro no Agregado");
+            mostrarMensaje("Los datos obligatorios (*) no estan rellenos.", "Error", "Registro no Agregado.");
 
         } else {
             control.modificarMascota(masco, nombreMaco, raza, color, observacion, nombredunio, telefono, alergico, especial);
 
-            mostrarMensaje("Registro agreagado correctamente.", "Info", "Agragado correctamente");
+            mostrarMensaje("Registro agreagado correctamente.", "Info", "Agragado correctamente.");
 
             //Como después de modificar no hace falta seguir en la pantalla vuelvo a ver datos.
             VerDatos edit = new VerDatos();

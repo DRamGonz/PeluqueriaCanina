@@ -84,7 +84,7 @@ public class CargarDatos extends javax.swing.JFrame {
         bntLimpiar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bntLimpiar.setForeground(new java.awt.Color(51, 255, 102));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/rasta/NetBeansProjects/PeluqueriaCanina/src/main/resources/META-INF/veterinary.gif")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/veterinary.gif"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         btnLimpiar.setBackground(new java.awt.Color(0, 153, 51));
@@ -349,15 +349,15 @@ public class CargarDatos extends javax.swing.JFrame {
         /*Compruebo que los datos más importanes estes rellenos.
         * Se puede hacer de dos manera: (|| o - && y)*/
         //if(nombreMaco.equals("") || raza.equals("") ||  color.equals("") ||nombredunio.equals("") || telefono.equals("") || alergico.equals("--"))
-        if (nombreMaco.isEmpty() || raza.isEmpty() || color.isEmpty() || nombredunio.isEmpty() || telefono.isEmpty() 
-             || alergico.equals("--")) {
+        if (nombreMaco.isEmpty() || raza.isEmpty() || color.isEmpty() || nombredunio.isEmpty() || telefono.isEmpty()
+                || alergico.equals("--")) {
 
-            mostrarMensaje("Los datos obligatorios (*) no estan rellenos", "Error", "Registro no Agregado");
+            mostrarMensaje("Los datos obligatorios (*) no estan rellenos.", "Error", "Registro no Agregado.");
 
         } else {
 
             control.guardar(nombreMaco, raza, color, observacion, nombredunio, telefono, alergico, especial);
-            mostrarMensaje("Registro agreagado correctamente.", "Info", "Agragado correctamente");
+            mostrarMensaje("Registro agreagado correctamente.", "Info", "Agragado correctamente.");
             //Limpio el formulario. 
             limpiarDatos();
 

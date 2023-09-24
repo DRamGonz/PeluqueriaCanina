@@ -205,36 +205,35 @@ public class VerDatos extends javax.swing.JFrame {
         Principal princ = new Principal();
         princ.setVisible(true);
         princ.setLocationRelativeTo(null);
-        
+
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
 
-          //Contro que la tabla no este vacía.
+        //Contro que la tabla no este vacía.
         if (TablaMascota.getRowCount() > 0) {
             //contro que tenga seleccionado un registro.
             if (TablaMascota.getSelectedRow() != -1) {
-                
+
                 int num_cliente = Integer.parseInt(String.valueOf(TablaMascota.getValueAt(TablaMascota.getSelectedRow(), 0)));
-                
-                EditarDatos pantallaEditar = new EditarDatos (num_cliente);
+
+                EditarDatos pantallaEditar = new EditarDatos(num_cliente);
                 pantallaEditar.setVisible(true);
                 pantallaEditar.setLocationRelativeTo(null);
-                this.dispose();                
-                
-                
-            }else {
-            
-                mostrarMensaje("No ha seleccionado ninguna mascota", "Error", "Error al eliminar.");
-                
+                this.dispose();
+
+            } else {
+
+                mostrarMensaje("No ha seleccionado ninguna mascota.", "Error", "Error al eliminar.");
+
             }
 
-        } else{
-        
-            mostrarMensaje("No hay nada para eliminar en la tabla.", "Error", "Error al eliminar.");
+        } else {
+
+            mostrarMensaje("No hay datos en la tabla para eliminar.", "Error", "Error al eliminar.");
         }
-        
+
 
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -284,7 +283,7 @@ public class VerDatos extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ha ocurrido un error al exportar los datos a Excel.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         // Abrir el archivo Excel con la aplicación predeterminada
         File file = new File("DatosMascotas.xlsx");
         try {
@@ -302,25 +301,25 @@ public class VerDatos extends javax.swing.JFrame {
             //contro que tenga seleccionado un registro.
             if (TablaMascota.getSelectedRow() != -1) {
                 int num_cliente = Integer.parseInt(String.valueOf(TablaMascota.getValueAt(TablaMascota.getSelectedRow(), 0)));
-                
+
                 //Se crea dos una para borrar en la tabla mascota o otra para borrar en la tabla dueño.
                 control.borrarMascota(num_cliente);
                 control.borrarDuenio(num_cliente);
-                
-                mostrarMensaje("Mascota eliminada correctamente","Info", "Borrado de mascota");
-                
+
+                mostrarMensaje("Mascota eliminada correctamente.", "Info", "Borrado de mascota.");
+
                 //Papra que vuelva a cargar la tabla con los datos actualizados. 
                 cargarTabla();
 
-            }else {
-            
-                mostrarMensaje("No ha seleccionado ninguna mascota", "Error", "Error al eliminar.");
-                
+            } else {
+
+                mostrarMensaje("No ha seleccionado ninguna mascota.", "Error", "Error al eliminar.");
+
             }
 
-        } else{
-        
-            mostrarMensaje("No hay nada para eliminar en la tabla.", "Error", "Error al eliminar.");
+        } else {
+
+            mostrarMensaje("No hay datos en la tabla para eliminar.", "Error", "Error al eliminar.");
         }
 
 

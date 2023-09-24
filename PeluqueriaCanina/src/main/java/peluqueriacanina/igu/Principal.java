@@ -56,7 +56,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setForeground(new java.awt.Color(51, 255, 102));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/rasta/NetBeansProjects/PeluqueriaCanina/src/main/resources/META-INF/veterinary.gif")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/META-INF/veterinary.gif"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
